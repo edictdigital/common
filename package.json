@@ -1,8 +1,8 @@
 {
-  "name": "@didorg/nestjs-pck-starter",
-  "version": "1.0.4",
-  "description": "NestJS npm package starter",
-  "author": "Didier Roque <didorg@gmail.com>",
+  "name": "@edictdigital/common",
+  "version": "1.0.1",
+  "description": "Learning Platform Common Package for Microservices",
+  "author": "Muhlis Murat Akay <edictdigital@gmail.com>",
   "license": "MIT",
   "readmeFilename": "README.md",
   "main": "dist/test.js",
@@ -29,11 +29,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/didorg/nestjs-package-starter"
+    "url": "https://github.com/edictdigital/common"
   },
-  "bugs": "https://github.com/didorg/nestjs-package-starter",
+  "bugs": "https://github.com/edictdigital/common",
   "peerDependencies": {
-    "@nestjs/common": "^6.0.0"
+    "@nestjs/common": "^8.0.0"
   },
   "devDependencies": {
     "@nestjs/common": "^8.0.0",

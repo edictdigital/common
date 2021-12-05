@@ -1,4 +1,9 @@
-// export public api from here
-// for example:
-// export * from './decorators';
-export * from './test';
+// Generic Base Controller and Service for CRUD
+import { BaseController } from "./base-crud/base.controller";
+import { BaseService, IBaseService } from "./base-crud/base.service";
+
+export {
+  BaseController,
+  BaseService,
+  IBaseService,
+};
