@@ -68,5 +68,8 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "dependencies": {
+    "typeorm": "^0.2.41"
   }
 }
