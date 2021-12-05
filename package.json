@@ -1,6 +1,6 @@
 {
   "name": "@edictdigital/common",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Learning Platform Common Package for Microservices",
   "author": "Muhlis Murat Akay <edictdigital@gmail.com>",
   "license": "MIT",
