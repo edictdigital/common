@@ -51,6 +51,7 @@ export class Organization extends MainEntity{
 <h3 id="new-version">How to Create New Version of NPMJS Packages</h3>
 
 1. Kod değişiklikleri yapılır.
+
 2. Local'de commit edilir.
 
 ```bash
@@ -81,3 +82,45 @@ git push origin <branch-name>
 ```
 
 7. Github'da master'a merge işlemi için pull request açılır ve merge edilir.
+
+<h3 id="serialize-decorator">How to User Serialize Decorator</h3>
+
+1. DTO içerisinde \@Expose() kullanılarak yollanacak olan field'lar işaretlenecek.
+```typescript
+import { Expose } from "class-transformer";
+
+export class UserDto {
+  @Expose()
+  id: number;
+
+  @Expose()
+  email: string;
+}
+```
+
+2. Controller Seviyesinde kullanma: 
+(Controller altındaki tüm handler function'lar response olarak UserDto'da expose edilen field'ları görebilir.)
+
+```typescript
+@Controller('auth')
+@Serialize(UserDto)
+export class UsersController { 
+  // ... 
+}
+```
+
+3. Handler Function Seviyesinde kullanma:
+
+```typescript
+// ...
+
+@Get('/whoami')
+@UseGuards(AuthGuard)
+@Serialize(UserDto)
+whoAmI(@CurrentUser() user: User) {
+  return user;
+}
+
+// ...
+
+```
