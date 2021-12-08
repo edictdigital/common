@@ -1,5 +1,5 @@
 import { UseInterceptors } from "@nestjs/common";
-import { SerializeInterceptor } from "src/interceptors/serialize.interceptor";
+import { SerializeInterceptor } from "../interceptors/serialize.interceptor";
 
 interface ClassConstructor {
   new(...args: any[]): {}
