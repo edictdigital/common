@@ -4,7 +4,7 @@ import { IBaseService } from "./base.service";
 
 
 export class BaseController<T extends BaseEntity> {
-  constructor(private readonly service: IBaseService<T>) {}
+  constructor(private readonly service: IBaseService<T>) { }
 
   @Get()
   async findAll(): Promise<T[]> {

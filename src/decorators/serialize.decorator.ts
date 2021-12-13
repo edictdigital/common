@@ -1,8 +1,8 @@
-import { 
-  CallHandler, 
-  ExecutionContext, 
-  NestInterceptor, 
-  UseInterceptors 
+import {
+  CallHandler,
+  ExecutionContext,
+  NestInterceptor,
+  UseInterceptors
 } from "@nestjs/common";
 import { plainToInstance } from "class-transformer";
 import { Observable } from "rxjs";
@@ -28,9 +28,15 @@ class SerializeInterceptor implements NestInterceptor {
         // Run something before the response is sent out.
         // console.log(data);
 
-        return plainToInstance(this.dto, data, {
-          excludeExtraneousValues: true,
-        });
+        if (Array.isArray(data)) {
+          return data.map(e => this.dto.fromEntity(e));
+        } else {
+          return this.dto.fromEntity(data);
+        }
+
+        // return plainToInstance(this.dto, data, {
+        //   excludeExtraneousValues: true,
+        // });
       })
     );
   }
