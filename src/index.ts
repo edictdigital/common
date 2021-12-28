@@ -3,7 +3,6 @@ import { BaseController } from "./base-crud/base.controller";
 import { BaseService, IBaseService } from "./base-crud/base.service";
 import { MainEntity } from "./base-crud/main.entity";
 import { Serialize } from "./decorators/serialize.decorator";
-import { SecondSerialize } from "./decorators/second-serialize.decorator";
 
 export {
   BaseController,
@@ -11,5 +10,4 @@ export {
   IBaseService,
   MainEntity,
   Serialize,
-  SecondSerialize,
 };
